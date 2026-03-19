@@ -1,0 +1,128 @@
+.stage-card {
+  position: relative;
+  padding: 30rpx;
+  overflow: hidden;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.stage-card:active {
+  transform: scale(0.99);
+}
+
+.stage-glow {
+  position: absolute;
+  right: -50rpx;
+  top: -40rpx;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 999rpx;
+  opacity: 0.12;
+}
+
+.accent-sunrise .stage-glow {
+  background: linear-gradient(180deg, #ffb772 0%, #ff8a3d 100%);
+}
+
+.accent-teal .stage-glow {
+  background: linear-gradient(180deg, #87d7ce 0%, #1e8e84 100%);
+}
+
+.accent-deep .stage-glow {
+  background: linear-gradient(180deg, #7ca4ff 0%, #285a9d 100%);
+}
+
+.stage-card-head,
+.stage-meta {
+  display: flex;
+  align-items: center;
+}
+
+.stage-card-head {
+  justify-content: space-between;
+  gap: 18rpx;
+}
+
+.stage-meta {
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.stage-chip,
+.stage-age {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+  font-weight: 600;
+}
+
+.stage-chip {
+  background: var(--bg-soft);
+  color: var(--brand-primary-deep);
+}
+
+.stage-age {
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--text-tertiary);
+}
+
+.stage-selector {
+  width: 46rpx;
+  height: 46rpx;
+  padding: 6rpx;
+  border-radius: 999rpx;
+  border: 2rpx solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.selector-core {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: transparent;
+}
+
+.stage-selector.active .selector-core {
+  background: linear-gradient(180deg, var(--brand-primary) 0%, var(--brand-primary-deep) 100%);
+}
+
+.stage-card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+  margin-top: 22rpx;
+}
+
+.stage-card-head {
+  position: relative;
+  z-index: 1;
+}
+
+.stage-title {
+  font-size: 34rpx;
+  line-height: 1.34;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stage-subtitle {
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: var(--brand-primary-deep);
+  font-weight: 600;
+}
+
+.stage-detail {
+  font-size: 24rpx;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.stage-card.is-selected {
+  transform: translateY(-4rpx);
+  border-color: var(--border-strong);
+}

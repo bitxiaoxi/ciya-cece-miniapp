@@ -1,0 +1,14 @@
+<view class="audio-button soft-card {{playing ? 'is-playing' : ''}} {{mode === 'child' ? 'is-child' : 'is-student'}}" bindtap="handleTap">
+  <view class="audio-icon-wrap">
+    <text class="audio-icon">{{playing ? '◉' : '▶'}}</text>
+  </view>
+  <view class="audio-copy">
+    <text class="audio-title">{{playing ? '播放中...' : '听发音'}}</text>
+    <text class="audio-subtitle">{{transcript}}</text>
+  </view>
+  <view class="audio-wave">
+    <view class="wave-bar"></view>
+    <view class="wave-bar middle"></view>
+    <view class="wave-bar"></view>
+  </view>
+</view>

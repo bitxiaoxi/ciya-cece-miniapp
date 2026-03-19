@@ -1,0 +1,10 @@
+<view class="ability-bar soft-card {{mode === 'child' ? 'is-child' : 'is-student'}}">
+  <view class="ability-top">
+    <text class="ability-label">{{ability.label}}</text>
+    <text class="ability-score">{{ability.score}}</text>
+  </view>
+  <view class="ability-track">
+    <view class="ability-fill" style="width: {{ability.score}}%;"></view>
+  </view>
+  <text class="ability-desc">{{ability.description}}</text>
+</view>

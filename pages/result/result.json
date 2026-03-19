@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "result-stat-card": "/components/result-stat-card/result-stat-card",
+    "ability-bar": "/components/ability-bar/ability-bar",
+    "action-footer": "/components/action-footer/action-footer"
+  }
+}

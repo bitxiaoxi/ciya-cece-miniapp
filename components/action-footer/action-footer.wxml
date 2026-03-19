@@ -1,0 +1,12 @@
+<view class="action-footer fade-up">
+  <view class="footer-secondary-row">
+    <block wx:for="{{secondaryActions}}" wx:key="key">
+      <view class="ghost-cta footer-secondary" data-key="{{item.key}}" bindtap="handleSecondaryTap">
+        <text>{{item.label}}</text>
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{showPrimary}}" class="primary-cta {{primaryDisabled ? 'is-disabled' : ''}}" bindtap="handlePrimaryTap">
+    <text>{{primaryText}}</text>
+  </view>
+</view>

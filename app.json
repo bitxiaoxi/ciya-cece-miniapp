@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/segment/segment",
+    "pages/quiz/quiz",
+    "pages/checkpoint/checkpoint",
+    "pages/result/result"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#FFF8EF",
+    "backgroundColorTop": "#FFF8EF",
+    "backgroundColorBottom": "#F4FBF8",
+    "navigationBarTitleText": "词芽测测",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

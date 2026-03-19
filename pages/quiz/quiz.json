@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "progress-header": "/components/progress-header/progress-header",
+    "question-card": "/components/question-card/question-card",
+    "answer-option": "/components/answer-option/answer-option",
+    "audio-button": "/components/audio-button/audio-button",
+    "action-footer": "/components/action-footer/action-footer"
+  }
+}

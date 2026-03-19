@@ -1,0 +1,111 @@
+.answer-option {
+  display: flex;
+  align-items: center;
+  gap: 22rpx;
+  width: 100%;
+  min-height: var(--option-height);
+  padding: 22rpx 24rpx;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  border: 2rpx solid var(--border-soft);
+  box-shadow: 0 12rpx 28rpx rgba(18, 58, 66, 0.06);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.answer-option:active {
+  transform: translateY(2rpx);
+}
+
+.option-badge,
+.option-state-mark {
+  flex-shrink: 0;
+  width: 58rpx;
+  height: 58rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option-badge {
+  background: var(--bg-soft);
+  color: var(--brand-primary-deep);
+}
+
+.badge-text {
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.option-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.option-label {
+  font-size: 30rpx;
+  line-height: 1.45;
+  color: var(--text-primary);
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.option-helper {
+  font-size: 22rpx;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+}
+
+.option-state-mark {
+  color: var(--text-tertiary);
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.state-selected {
+  border-color: var(--border-strong);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 240, 218, 0.9));
+  transform: translateY(-2rpx);
+}
+
+.theme-student .state-selected,
+.is-student.state-selected {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(232, 245, 242, 0.88));
+}
+
+.state-correct {
+  border-color: rgba(67, 184, 110, 0.3);
+  background: rgba(232, 249, 239, 0.92);
+}
+
+.state-correct .option-badge,
+.state-correct .option-state-mark {
+  background: rgba(67, 184, 110, 0.16);
+  color: var(--success);
+}
+
+.state-wrong {
+  border-color: rgba(255, 138, 61, 0.34);
+  background: rgba(255, 243, 236, 0.95);
+}
+
+.state-wrong .option-badge,
+.state-wrong .option-state-mark {
+  background: rgba(255, 138, 61, 0.12);
+  color: var(--brand-primary-deep);
+}
+
+.state-disabled-next {
+  opacity: 0.68;
+}
+
+.is-child .option-label {
+  font-size: 32rpx;
+}
+
+.is-child .answer-option {
+  min-height: 120rpx;
+}

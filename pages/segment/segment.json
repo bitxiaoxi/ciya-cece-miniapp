@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "stage-card": "/components/stage-card/stage-card"
+  }
+}

@@ -1,0 +1,11 @@
+<view class="page-shell theme-{{themeMode}} checkpoint-page">
+  <view class="floating-orb warm checkpoint-orb orb-left"></view>
+  <view class="floating-orb mint checkpoint-orb orb-right"></view>
+
+  <view class="checkpoint-head fade-up">
+    <text class="soft-badge">Checkpoint · {{milestone}} 题完成</text>
+    <text class="checkpoint-title">{{themeMode === 'child' ? '歇一口气，再继续' : '小结一下，继续完成测评'}}</text>
+  </view>
+
+  <encourage-panel mode="{{themeMode}}" panel="{{panel}}" bind:continue="handleContinue"></encourage-panel>
+</view>

@@ -1,0 +1,46 @@
+.ability-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+  padding: 24rpx;
+  border-radius: var(--radius-lg);
+}
+
+.ability-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.ability-label {
+  font-size: 28rpx;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.ability-score {
+  font-size: 26rpx;
+  color: var(--brand-primary-deep);
+  font-weight: 700;
+}
+
+.ability-track {
+  width: 100%;
+  height: 16rpx;
+  border-radius: 999rpx;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.ability-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--brand-accent) 0%, var(--brand-primary) 100%);
+}
+
+.ability-desc {
+  font-size: 24rpx;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}

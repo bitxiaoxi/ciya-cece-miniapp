@@ -1,0 +1,11 @@
+<view class="encourage-panel surface-card pop-in {{mode === 'child' ? 'is-child' : 'is-student'}}">
+  <view class="encourage-art tone-{{panel.tone}}">
+    <text class="encourage-emoji">{{panel.emoji}}</text>
+  </view>
+  <view class="encourage-copy">
+    <text class="encourage-kicker">{{panel.kicker}}</text>
+    <text class="encourage-title">{{panel.title}}</text>
+    <text class="encourage-desc">{{panel.description}}</text>
+  </view>
+  <view class="primary-cta" bindtap="handleContinue">继续完成</view>
+</view>

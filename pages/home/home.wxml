@@ -1,0 +1,58 @@
+<view class="page-shell theme-child home-page">
+  <view class="floating-orb warm home-orb orb-left"></view>
+  <view class="floating-orb mint home-orb orb-right"></view>
+  <view class="floating-orb blue home-orb orb-bottom"></view>
+
+  <view class="home-hero surface-card fade-up">
+    <view class="hero-brand">
+      <view class="brand-mark">
+        <view class="brand-seed seed-left"></view>
+        <view class="brand-seed seed-right"></view>
+        <view class="brand-core"></view>
+      </view>
+      <view class="brand-copy">
+        <text class="brand-name">词芽测测</text>
+        <text class="brand-slogan">3分钟，测一测孩子认识多少英语词汇</text>
+      </view>
+    </view>
+
+    <view class="hero-copy">
+      <text class="hero-title">测一测认识多少英语词汇</text>
+      <text class="hero-subtitle">短回合、自适应、低压力，让孩子愿意继续做，也让家长一眼看懂结果。</text>
+    </view>
+
+    <view class="hero-highlight-row">
+      <block wx:for="{{highlights}}" wx:key="*this">
+        <text class="soft-badge">{{item}}</text>
+      </block>
+    </view>
+
+    <view class="hero-actions">
+      <view class="primary-cta" bindtap="handleStart">开始测评</view>
+      <view class="secondary-cta" bindtap="handlePreviewResult">查看结果示例</view>
+    </view>
+  </view>
+
+  <view class="home-storyboard soft-card fade-up">
+    <view class="story-card child">
+      <text class="story-icon">🧠</text>
+      <text class="story-title">不是考试</text>
+      <text class="story-desc">遇到不会的题可以跳过，系统会继续往下走。</text>
+    </view>
+    <view class="story-card student">
+      <text class="story-icon">📈</text>
+      <text class="story-title">结果更可信</text>
+      <text class="story-desc">除了数字，还会看认读、听辨和语境理解。</text>
+    </view>
+  </view>
+
+  <view class="home-note surface-card fade-up">
+    <text class="note-title">给家长的轻量说明</text>
+    <block wx:for="{{trustPoints}}" wx:key="*this">
+      <view class="note-item">
+        <text class="note-dot"></text>
+        <text class="note-text">{{item}}</text>
+      </view>
+    </block>
+  </view>
+</view>

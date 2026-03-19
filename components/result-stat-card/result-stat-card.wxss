@@ -1,0 +1,58 @@
+.result-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 22rpx;
+  padding: 34rpx;
+}
+
+.result-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  flex-wrap: wrap;
+}
+
+.result-range {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.estimate-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.estimate-label {
+  font-size: 24rpx;
+  color: var(--text-tertiary);
+}
+
+.estimate-value {
+  font-size: 88rpx;
+  line-height: 1;
+  color: var(--brand-primary-deep);
+  font-weight: 800;
+}
+
+.result-summary {
+  font-size: 30rpx;
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.result-note {
+  padding: 22rpx 24rpx;
+  border-radius: var(--radius-md);
+  background: var(--bg-soft);
+  color: var(--text-secondary);
+  font-size: 24rpx;
+  line-height: 1.65;
+}
+
+.is-student .estimate-value {
+  font-size: 80rpx;
+}

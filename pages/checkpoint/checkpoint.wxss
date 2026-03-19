@@ -1,0 +1,34 @@
+.checkpoint-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30rpx;
+}
+
+.checkpoint-orb {
+  width: 280rpx;
+  height: 280rpx;
+}
+
+.checkpoint-page .orb-left {
+  top: 120rpx;
+  left: -120rpx;
+}
+
+.checkpoint-page .orb-right {
+  bottom: 120rpx;
+  right: -80rpx;
+}
+
+.checkpoint-head {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.checkpoint-title {
+  font-size: 54rpx;
+  line-height: 1.08;
+  color: var(--text-primary);
+  font-weight: 800;
+}

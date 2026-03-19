@@ -1,0 +1,17 @@
+<view class="stage-card surface-card pop-in {{selected ? 'is-selected' : ''}} accent-{{stage.heroAccent}}" bindtap="handleSelect">
+  <view class="stage-glow"></view>
+  <view class="stage-card-head">
+    <view class="stage-meta">
+      <text class="stage-chip">{{stage.shortLabel}}</text>
+      <text class="stage-age">{{stage.ageRange}}</text>
+    </view>
+    <view class="stage-selector {{selected ? 'active' : ''}}">
+      <view class="selector-core"></view>
+    </view>
+  </view>
+  <view class="stage-card-body">
+    <text class="stage-title">{{stage.label}}</text>
+    <text class="stage-subtitle">{{stage.subtitle}}</text>
+    <text class="stage-detail">{{stage.detail}}</text>
+  </view>
+</view>

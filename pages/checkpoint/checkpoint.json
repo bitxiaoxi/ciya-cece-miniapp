@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "encourage-panel": "/components/encourage-panel/encourage-panel"
+  }
+}

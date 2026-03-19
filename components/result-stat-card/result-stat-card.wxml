@@ -1,0 +1,14 @@
+<view class="result-stat-card surface-card fade-up {{mode === 'child' ? 'is-child' : 'is-student'}}">
+  <view class="result-badge-row">
+    <text class="soft-badge">AI 自适应估算结果</text>
+    <text class="result-range">约 {{result.vocabRange}}</text>
+  </view>
+  <view class="estimate-wrap">
+    <text class="estimate-label">词汇量估算值</text>
+    <text class="estimate-value">{{result.vocabEstimate}}</text>
+  </view>
+  <text class="result-summary">{{result.summary}}</text>
+  <view class="result-note">
+    <text>{{result.note}}</text>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+<view class="page-shell theme-{{themeMode}} result-page">
+  <view class="floating-orb warm result-orb orb-top"></view>
+  <view class="floating-orb blue result-orb orb-right"></view>
+
+  <view class="result-head fade-up">
+    <view class="head-copy">
+      <text class="soft-badge">{{stageLabel}}</text>
+      <text class="result-title">{{themeMode === 'child' ? '这次测评完成啦' : '词汇量测评结果'}}</text>
+      <text class="result-subtitle">不是单一分数，而是一个基于短回合自适应题目的估算结果。</text>
+    </view>
+    <view class="head-medal {{themeMode === 'child' ? 'child' : 'student'}}">
+      <text>{{themeMode === 'child' ? '🏅' : '◎'}}</text>
+    </view>
+  </view>
+
+  <result-stat-card result="{{result}}" mode="{{themeMode}}"></result-stat-card>
+
+  <view class="result-tags soft-card fade-up">
+    <text class="section-title">这次表现关键词</text>
+    <view class="tag-list">
+      <block wx:for="{{referenceTags}}" wx:key="*this">
+        <text class="tag-chip">{{item}}</text>
+      </block>
+    </view>
+  </view>
+
+  <view class="result-section surface-card fade-up">
+    <text class="section-title">学段参考</text>
+    <text class="section-main">{{result.stageReference}}</text>
+    <text class="section-sub">基础词掌握会影响整体估算值，继续积累高频词会带来更明显的提升。</text>
+  </view>
+
+  <view class="result-section surface-card fade-up">
+    <text class="section-title">能力拆解</text>
+    <view class="ability-list">
+      <block wx:for="{{result.abilities}}" wx:key="key">
+        <ability-bar ability="{{item}}" mode="{{themeMode}}"></ability-bar>
+      </block>
+    </view>
+  </view>
+
+  <view class="result-section surface-card fade-up">
+    <text class="section-title">下一步建议</text>
+    <view class="suggestion-list">
+      <block wx:for="{{suggestionTags}}" wx:key="*this">
+        <view class="suggestion-item">
+          <text class="suggestion-dot"></text>
+          <text class="suggestion-text">{{item}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <action-footer
+    primary-text="开始巩固"
+    secondary-actions="{{footerActions}}"
+    bind:primarytap="handlePrimaryTap"
+    bind:secondarytap="handleSecondaryTap"
+  ></action-footer>
+</view>

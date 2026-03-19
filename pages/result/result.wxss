@@ -1,0 +1,151 @@
+.result-page {
+  display: flex;
+  flex-direction: column;
+  gap: 22rpx;
+}
+
+.result-orb {
+  width: 280rpx;
+  height: 280rpx;
+}
+
+.result-page .orb-top {
+  top: 80rpx;
+  left: -80rpx;
+}
+
+.result-page .orb-right {
+  top: 360rpx;
+  right: -90rpx;
+}
+
+.result-head {
+  display: flex;
+  gap: 18rpx;
+  align-items: center;
+}
+
+.head-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+}
+
+.result-title {
+  font-size: 56rpx;
+  line-height: 1.08;
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+.result-subtitle {
+  font-size: 26rpx;
+  line-height: 1.68;
+  color: var(--text-secondary);
+}
+
+.head-medal {
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 34rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46rpx;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.head-medal.child {
+  background: linear-gradient(180deg, #ffb772 0%, #ff8a3d 100%);
+}
+
+.head-medal.student {
+  background: linear-gradient(180deg, #3f6dd8 0%, #1e8e84 100%);
+}
+
+.result-tags,
+.result-section {
+  padding: 28rpx;
+}
+
+.result-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.section-main {
+  font-size: 34rpx;
+  line-height: 1.5;
+  color: var(--brand-primary-deep);
+  font-weight: 700;
+}
+
+.section-sub {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.tag-chip {
+  min-height: 52rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  background: var(--bg-soft);
+  color: var(--brand-primary-deep);
+  display: inline-flex;
+  align-items: center;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.result-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.ability-list,
+.suggestion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+}
+
+.suggestion-item {
+  display: flex;
+  gap: 14rpx;
+  align-items: flex-start;
+}
+
+.suggestion-dot {
+  width: 14rpx;
+  height: 14rpx;
+  margin-top: 12rpx;
+  border-radius: 999rpx;
+  background: var(--brand-accent);
+}
+
+.suggestion-text {
+  flex: 1;
+  min-width: 0;
+  font-size: 24rpx;
+  line-height: 1.72;
+  color: var(--text-secondary);
+}

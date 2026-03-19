@@ -1,0 +1,14 @@
+<view class="answer-option {{mode === 'child' ? 'is-child' : 'is-student'}} state-{{state}}" bindtap="handleTap">
+  <view class="option-badge">
+    <text class="badge-text">{{option.letter}}</text>
+  </view>
+  <view class="option-copy">
+    <text class="option-label">{{option.label}}</text>
+    <text wx:if="{{option.helper}}" class="option-helper">{{option.helper}}</text>
+  </view>
+  <view class="option-state-mark">
+    <text wx:if="{{state === 'correct'}}">✓</text>
+    <text wx:elif="{{state === 'wrong'}}">✕</text>
+    <text wx:elif="{{state === 'selected'}}">…</text>
+  </view>
+</view>

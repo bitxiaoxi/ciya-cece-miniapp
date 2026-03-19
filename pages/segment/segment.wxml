@@ -1,0 +1,31 @@
+<view class="page-shell theme-child segment-page">
+  <view class="floating-orb warm segment-orb orb-top"></view>
+  <view class="floating-orb mint segment-orb orb-side"></view>
+
+  <view class="segment-nav fade-up">
+    <view class="back-pill" bindtap="handleBack">
+      <text class="back-icon">‹</text>
+      <text class="back-text">返回</text>
+    </view>
+  </view>
+
+  <view class="segment-hero fade-up">
+    <text class="soft-badge">词芽测测 · 分层体验</text>
+    <text class="segment-title">选择当前学习阶段</text>
+    <text class="segment-subtitle">系统会根据你选择的阶段，切换更合适的题面难度和页面表达方式。</text>
+  </view>
+
+  <view class="segment-list">
+    <block wx:for="{{stages}}" wx:key="id">
+      <stage-card stage="{{item}}" selected="{{item.id === selectedId}}" bind:select="handleSelectStage"></stage-card>
+    </block>
+  </view>
+
+  <view class="segment-footer surface-card fade-up">
+    <view class="footer-copy">
+      <text class="footer-tip">小朋友做题时可以由家长陪同，一起更轻松。</text>
+      <text wx:if="{{selectedStage}}" class="footer-preview">已选：{{selectedStage.shortLabel}} · {{selectedStage.promptStyle}}</text>
+    </view>
+    <view class="primary-cta {{selectedId ? '' : 'is-disabled'}}" bindtap="handleContinue">继续进入测评</view>
+  </view>
+</view>

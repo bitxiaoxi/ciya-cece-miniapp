@@ -1,0 +1,78 @@
+.segment-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.segment-orb {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.orb-top {
+  top: 40rpx;
+  right: -80rpx;
+}
+
+.orb-side {
+  top: 340rpx;
+  left: -60rpx;
+}
+
+.segment-nav {
+  display: flex;
+}
+
+.segment-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.segment-title {
+  font-size: 58rpx;
+  line-height: 1.08;
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+.segment-subtitle {
+  font-size: 28rpx;
+  line-height: 1.68;
+  color: var(--text-secondary);
+}
+
+.segment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.segment-footer {
+  margin-top: auto;
+  padding: 28rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.footer-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.footer-tip,
+.footer-preview {
+  font-size: 24rpx;
+  line-height: 1.65;
+}
+
+.footer-tip {
+  color: var(--text-secondary);
+}
+
+.footer-preview {
+  color: var(--brand-primary-deep);
+  font-weight: 600;
+}

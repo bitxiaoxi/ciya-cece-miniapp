@@ -1,0 +1,18 @@
+.action-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+  padding-top: 8rpx;
+}
+
+.footer-secondary-row {
+  display: flex;
+  gap: 16rpx;
+}
+
+.footer-secondary {
+  flex: 1;
+  min-height: 88rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+}

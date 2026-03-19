@@ -1,0 +1,84 @@
+.audio-button {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 22rpx 24rpx;
+  border-radius: var(--radius-lg);
+}
+
+.audio-button:active {
+  transform: scale(0.99);
+}
+
+.audio-icon-wrap {
+  width: 74rpx;
+  height: 74rpx;
+  border-radius: 999rpx;
+  background: linear-gradient(180deg, var(--brand-primary) 0%, var(--brand-primary-deep) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 12rpx 28rpx rgba(21, 106, 104, 0.16);
+}
+
+.audio-icon {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.audio-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+}
+
+.audio-title {
+  font-size: 28rpx;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.audio-subtitle {
+  font-size: 22rpx;
+  color: var(--text-tertiary);
+}
+
+.audio-wave {
+  display: flex;
+  align-items: flex-end;
+  gap: 6rpx;
+}
+
+.wave-bar {
+  width: 8rpx;
+  height: 26rpx;
+  border-radius: 999rpx;
+  background: rgba(30, 142, 132, 0.34);
+}
+
+.wave-bar.middle {
+  height: 40rpx;
+}
+
+.is-playing .wave-bar {
+  animation: wavePulse 780ms ease infinite alternate;
+}
+
+.is-playing .wave-bar.middle {
+  animation-delay: 120ms;
+}
+
+@keyframes wavePulse {
+  from {
+    opacity: 0.36;
+    transform: scaleY(0.65);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1.06);
+  }
+}

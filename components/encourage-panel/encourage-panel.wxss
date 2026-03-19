@@ -1,0 +1,64 @@
+.encourage-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+  padding: 34rpx;
+}
+
+.encourage-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280rpx;
+  border-radius: var(--radius-lg);
+}
+
+.encourage-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.encourage-kicker {
+  font-size: 22rpx;
+  color: var(--brand-primary-deep);
+  font-weight: 700;
+}
+
+.encourage-title {
+  font-size: 48rpx;
+  line-height: 1.18;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.encourage-desc {
+  font-size: 28rpx;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.encourage-emoji {
+  font-size: 120rpx;
+  line-height: 1;
+}
+
+.tone-warm {
+  background: linear-gradient(180deg, rgba(255, 199, 133, 0.28), rgba(255, 241, 218, 0.6));
+}
+
+.tone-sun {
+  background: linear-gradient(180deg, rgba(255, 205, 125, 0.36), rgba(255, 241, 218, 0.48));
+}
+
+.tone-teal {
+  background: linear-gradient(180deg, rgba(30, 142, 132, 0.16), rgba(243, 251, 248, 0.92));
+}
+
+.tone-deep {
+  background: linear-gradient(180deg, rgba(63, 109, 216, 0.16), rgba(238, 245, 251, 0.92));
+}
+
+.is-student .encourage-title {
+  font-size: 42rpx;
+}

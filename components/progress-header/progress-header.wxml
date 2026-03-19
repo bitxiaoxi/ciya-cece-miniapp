@@ -1,0 +1,18 @@
+<view class="progress-header {{modeClass}} fade-up">
+  <view class="header-top">
+    <view class="back-pill" bindtap="handleBack">
+      <text class="back-icon">‹</text>
+      <text class="back-text">返回</text>
+    </view>
+    <view class="header-stage">
+      <text class="stage-text">{{stageLabel}}</text>
+    </view>
+    <view class="question-counter">{{current}} / {{total}}</view>
+  </view>
+  <view class="header-body">
+    <text class="progress-label">第 {{current}} / {{total}} 题</text>
+    <view class="progress-track">
+      <view class="progress-fill" style="width: {{progressWidth}}%;"></view>
+    </view>
+  </view>
+</view>
