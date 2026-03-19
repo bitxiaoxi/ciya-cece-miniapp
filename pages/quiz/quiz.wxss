@@ -83,3 +83,7 @@
   background: rgba(255, 243, 236, 0.92);
   color: var(--brand-primary-deep);
 }
+
+.quiz-brand-slot {
+  padding-top: 4rpx;
+}

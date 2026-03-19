@@ -3,6 +3,7 @@
   "usingComponents": {
     "result-stat-card": "/components/result-stat-card/result-stat-card",
     "ability-bar": "/components/ability-bar/ability-bar",
-    "action-footer": "/components/action-footer/action-footer"
+    "action-footer": "/components/action-footer/action-footer",
+    "brand-result-note": "/components/brand-result-note/brand-result-note"
   }
 }

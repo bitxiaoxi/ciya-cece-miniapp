@@ -1,0 +1,60 @@
+.brand-signature {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  width: 100%;
+}
+
+.align-center {
+  justify-content: center;
+}
+
+.align-right {
+  justify-content: flex-end;
+}
+
+.signature-art {
+  position: relative;
+  width: 20rpx;
+  height: 16rpx;
+  flex-shrink: 0;
+}
+
+.signature-leaf {
+  position: absolute;
+  top: 0;
+  width: 10rpx;
+  height: 14rpx;
+  border-radius: 60% 60% 50% 50%;
+  background: linear-gradient(180deg, rgba(79, 181, 159, 0.9), rgba(29, 111, 104, 0.8));
+}
+
+.signature-leaf.leaf-left {
+  left: 0;
+  transform: rotate(-26deg);
+}
+
+.signature-leaf.leaf-right {
+  right: 0;
+  transform: rotate(24deg);
+}
+
+.signature-text {
+  font-size: 22rpx;
+  line-height: 1.4;
+  letter-spacing: 1rpx;
+  color: var(--trust-brand-text);
+  font-weight: 500;
+}
+
+.is-muted {
+  opacity: 0.56;
+}
+
+.mode-child .signature-text {
+  font-size: 22rpx;
+}
+
+.mode-student .signature-text {
+  font-size: 20rpx;
+}

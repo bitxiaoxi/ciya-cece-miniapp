@@ -1,6 +1,7 @@
 {
   "navigationStyle": "custom",
   "usingComponents": {
-    "stage-card": "/components/stage-card/stage-card"
+    "stage-card": "/components/stage-card/stage-card",
+    "brand-badge": "/components/brand-badge/brand-badge"
   }
 }

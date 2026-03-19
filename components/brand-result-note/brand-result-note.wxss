@@ -1,0 +1,106 @@
+.brand-result-note {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+  padding: 26rpx 28rpx;
+  border: 2rpx solid var(--trust-brand-border);
+  background:
+    radial-gradient(circle at top right, rgba(107, 197, 170, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), var(--trust-brand-bg));
+  box-shadow: var(--trust-brand-shadow);
+}
+
+.result-note-head {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+}
+
+.result-note-art {
+  position: relative;
+  flex-shrink: 0;
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.82);
+  border: 2rpx solid rgba(107, 197, 170, 0.2);
+}
+
+.note-page {
+  position: absolute;
+  left: 22rpx;
+  top: 30rpx;
+  width: 30rpx;
+  height: 20rpx;
+  border-radius: 10rpx 10rpx 12rpx 12rpx;
+  background: rgba(255, 255, 255, 0.94);
+  border: 2rpx solid rgba(107, 197, 170, 0.32);
+}
+
+.note-leaf {
+  position: absolute;
+  top: 12rpx;
+  width: 18rpx;
+  height: 28rpx;
+  border-radius: 60% 60% 50% 50%;
+  background: linear-gradient(180deg, var(--trust-brand-accent) 0%, var(--trust-brand-text) 100%);
+}
+
+.note-leaf.leaf-left {
+  left: 14rpx;
+  transform: rotate(-28deg);
+}
+
+.note-leaf.leaf-right {
+  right: 14rpx;
+  transform: rotate(28deg);
+}
+
+.note-core {
+  position: absolute;
+  left: 50%;
+  bottom: 16rpx;
+  width: 6rpx;
+  height: 18rpx;
+  margin-left: -3rpx;
+  border-radius: 999rpx;
+  background: var(--trust-brand-text);
+}
+
+.result-note-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.result-note-brand {
+  font-size: 22rpx;
+  color: var(--trust-brand-text);
+  font-weight: 700;
+  letter-spacing: 1rpx;
+}
+
+.result-note-title {
+  font-size: 28rpx;
+  line-height: 1.55;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.result-note-divider {
+  width: 100%;
+  height: 2rpx;
+  background: linear-gradient(90deg, var(--trust-brand-border) 0%, rgba(107, 197, 170, 0.02) 100%);
+}
+
+.result-note-desc {
+  font-size: 24rpx;
+  line-height: 1.72;
+  color: var(--text-secondary);
+}
+
+.mode-child .result-note-title {
+  font-size: 30rpx;
+}

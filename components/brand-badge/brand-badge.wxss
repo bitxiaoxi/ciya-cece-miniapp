@@ -1,0 +1,91 @@
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 14rpx;
+  max-width: 100%;
+  color: var(--trust-brand-text);
+  border: 2rpx solid var(--trust-brand-border);
+  background: linear-gradient(180deg, var(--trust-brand-bg), rgba(255, 255, 255, 0.95));
+  box-shadow: var(--trust-brand-shadow);
+}
+
+.variant-compact {
+  min-height: 58rpx;
+  padding: 0 18rpx 0 14rpx;
+  border-radius: 999rpx;
+}
+
+.variant-normal {
+  min-height: 72rpx;
+  padding: 0 22rpx 0 16rpx;
+  border-radius: 24rpx;
+}
+
+.badge-art {
+  position: relative;
+  flex-shrink: 0;
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.badge-page {
+  position: absolute;
+  left: 8rpx;
+  top: 12rpx;
+  width: 22rpx;
+  height: 16rpx;
+  border-radius: 8rpx 8rpx 10rpx 10rpx;
+  background: rgba(255, 255, 255, 0.86);
+  border: 2rpx solid rgba(107, 197, 170, 0.34);
+}
+
+.badge-leaf {
+  position: absolute;
+  top: 0;
+  width: 14rpx;
+  height: 20rpx;
+  border-radius: 60% 60% 50% 50%;
+  background: linear-gradient(180deg, var(--trust-brand-accent) 0%, var(--trust-brand-text) 100%);
+}
+
+.leaf-left {
+  left: 4rpx;
+  transform: rotate(-28deg);
+}
+
+.leaf-right {
+  right: 3rpx;
+  transform: rotate(28deg);
+}
+
+.badge-stem {
+  position: absolute;
+  left: 50%;
+  bottom: 4rpx;
+  width: 4rpx;
+  height: 12rpx;
+  margin-left: -2rpx;
+  border-radius: 999rpx;
+  background: var(--trust-brand-text);
+}
+
+.badge-text {
+  max-width: 100%;
+  font-size: 24rpx;
+  line-height: 1.4;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.variant-normal .badge-art {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.variant-normal .badge-text {
+  font-size: 25rpx;
+}
+
+.mode-child.variant-compact {
+  padding-right: 20rpx;
+}

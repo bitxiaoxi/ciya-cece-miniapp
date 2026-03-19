@@ -15,6 +15,13 @@
 
   <result-stat-card result="{{result}}" mode="{{themeMode}}"></result-stat-card>
 
+  <brand-result-note
+    variant="result"
+    mode="{{themeMode}}"
+    title="本次结果由青青课堂自适应测评生成"
+    description="结合短回合题目表现、能力维度和难度变化，帮助家长更清楚地理解当前词汇覆盖和下一步巩固方向。"
+  ></brand-result-note>
+
   <view class="result-tags soft-card fade-up">
     <text class="section-title">这次表现关键词</text>
     <view class="tag-list">

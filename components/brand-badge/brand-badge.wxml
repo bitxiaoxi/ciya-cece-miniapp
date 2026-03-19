@@ -1,0 +1,9 @@
+<view class="brand-badge fade-up variant-{{variant}} mode-{{mode}}">
+  <view class="badge-art">
+    <view class="badge-page"></view>
+    <view class="badge-leaf leaf-left"></view>
+    <view class="badge-leaf leaf-right"></view>
+    <view class="badge-stem"></view>
+  </view>
+  <text class="badge-text">{{text}}</text>
+</view>

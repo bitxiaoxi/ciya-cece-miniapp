@@ -30,6 +30,12 @@ navigator {
   --brand-primary-deep: #eb6e20;
   --brand-secondary: #ffe2a4;
   --brand-accent: #62c99c;
+  --trust-brand-bg: rgba(234, 248, 243, 0.92);
+  --trust-brand-border: rgba(84, 164, 140, 0.2);
+  --trust-brand-text: #2f7365;
+  --trust-brand-accent: #6bc5aa;
+  --trust-brand-shadow: 0 12rpx 30rpx rgba(78, 153, 132, 0.12);
+  --trust-brand-muted: rgba(47, 115, 101, 0.54);
   --success: #43b86e;
   --warning: #ffba53;
   --text-primary: #24333b;
@@ -69,6 +75,12 @@ navigator {
   --brand-primary-deep: #156a68;
   --brand-secondary: #cdece8;
   --brand-accent: #3f6dd8;
+  --trust-brand-bg: rgba(232, 245, 242, 0.94);
+  --trust-brand-border: rgba(30, 142, 132, 0.18);
+  --trust-brand-text: #1d6f68;
+  --trust-brand-accent: #4fb59f;
+  --trust-brand-shadow: 0 12rpx 30rpx rgba(17, 74, 81, 0.1);
+  --trust-brand-muted: rgba(29, 111, 104, 0.46);
   --success: #2f9e6f;
   --warning: #ef9e41;
   --text-primary: #19313b;

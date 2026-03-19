@@ -1,0 +1,16 @@
+<view class="brand-result-note soft-card pop-in variant-{{variant}} mode-{{mode}}">
+  <view class="result-note-head">
+    <view class="result-note-art">
+      <view class="note-page"></view>
+      <view class="note-leaf leaf-left"></view>
+      <view class="note-leaf leaf-right"></view>
+      <view class="note-core"></view>
+    </view>
+    <view class="result-note-copy">
+      <text class="result-note-brand">青青课堂</text>
+      <text class="result-note-title">{{title}}</text>
+    </view>
+  </view>
+  <view class="result-note-divider"></view>
+  <text class="result-note-desc">{{description}}</text>
+</view>

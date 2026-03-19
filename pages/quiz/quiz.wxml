@@ -50,4 +50,13 @@
     bind:primarytap="handlePrimaryTap"
     bind:secondarytap="handleSecondaryTap"
   ></action-footer>
+
+  <view class="quiz-brand-slot">
+    <brand-signature
+      text="青青课堂"
+      mode="{{themeMode}}"
+      align="{{themeMode === 'child' ? 'center' : 'right'}}"
+      muted="{{true}}"
+    ></brand-signature>
+  </view>
 </view>

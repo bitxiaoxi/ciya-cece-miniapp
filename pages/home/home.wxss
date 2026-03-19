@@ -108,6 +108,10 @@
   gap: 16rpx;
 }
 
+.home-brand-slot {
+  display: flex;
+}
+
 .hero-title {
   font-size: 62rpx;
   line-height: 1.06;

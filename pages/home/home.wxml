@@ -16,6 +16,10 @@
       </view>
     </view>
 
+    <view class="home-brand-slot">
+      <brand-badge variant="compact" text="青青课堂出品" mode="child"></brand-badge>
+    </view>
+
     <view class="hero-copy">
       <text class="hero-title">测一测认识多少英语词汇</text>
       <text class="hero-subtitle">短回合、自适应、低压力，让孩子愿意继续做，也让家长一眼看懂结果。</text>

@@ -29,6 +29,10 @@
   gap: 16rpx;
 }
 
+.segment-brand-slot {
+  display: flex;
+}
+
 .segment-title {
   font-size: 58rpx;
   line-height: 1.08;

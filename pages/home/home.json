@@ -1,3 +1,6 @@
 {
-  "navigationStyle": "custom"
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "brand-badge": "/components/brand-badge/brand-badge"
+  }
 }

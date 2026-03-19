@@ -11,6 +11,9 @@
 
   <view class="segment-hero fade-up">
     <text class="soft-badge">词芽测测 · 分层体验</text>
+    <view class="segment-brand-slot">
+      <brand-badge variant="normal" text="来自青青课堂的自适应测评" mode="child"></brand-badge>
+    </view>
     <text class="segment-title">选择当前学习阶段</text>
     <text class="segment-subtitle">系统会根据你选择的阶段，切换更合适的题面难度和页面表达方式。</text>
   </view>

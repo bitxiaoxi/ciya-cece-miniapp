@@ -1,0 +1,7 @@
+<view class="brand-signature fade-up align-{{align}} {{muted ? 'is-muted' : ''}} mode-{{mode}}">
+  <view class="signature-art">
+    <view class="signature-leaf leaf-left"></view>
+    <view class="signature-leaf leaf-right"></view>
+  </view>
+  <text class="signature-text">{{text}}</text>
+</view>
