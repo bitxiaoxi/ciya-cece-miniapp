@@ -16,11 +16,5 @@ Page({
     wx.navigateTo({
       url: '/pages/segment/segment'
     });
-  },
-
-  handlePreviewResult() {
-    wx.navigateTo({
-      url: '/pages/result/result?sample=1'
-    });
   }
 });

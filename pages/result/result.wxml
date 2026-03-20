@@ -59,9 +59,8 @@
   </view>
 
   <action-footer
-    primary-text="开始巩固"
+    show-primary="{{false}}"
     secondary-actions="{{footerActions}}"
-    bind:primarytap="handlePrimaryTap"
     bind:secondarytap="handleSecondaryTap"
   ></action-footer>
 </view>

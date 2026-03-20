@@ -33,7 +33,6 @@
 
     <view class="hero-actions">
       <view class="primary-cta" bindtap="handleStart">开始测评</view>
-      <view class="secondary-cta" bindtap="handlePreviewResult">查看结果示例</view>
     </view>
   </view>
 

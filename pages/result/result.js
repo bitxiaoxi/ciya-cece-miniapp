@@ -31,13 +31,6 @@ Page({
     });
   },
 
-  handlePrimaryTap() {
-    wx.showToast({
-      title: '巩固模块待接入',
-      icon: 'none'
-    });
-  },
-
   handleSecondaryTap(event) {
     if (event.detail.key !== 'retry') {
       return;
