@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ciya.cece.assessment.mapper.AssessmentStageRuleMapper">
+
+    <select id="selectActiveStageRules" resultType="com.ciya.cece.assessment.entity.AssessmentStageRule">
+        SELECT
+            id,
+            stage_code,
+            stage_name,
+            start_difficulty,
+            min_difficulty,
+            max_difficulty,
+            route_question_count,
+            core_question_count,
+            anchor_question_count,
+            stop_confidence,
+            result_mapping_json,
+            rule_version,
+            status,
+            created_at,
+            updated_at
+        FROM assessment_stage_rule
+        WHERE status = 1
+        ORDER BY id ASC
+    </select>
+</mapper>

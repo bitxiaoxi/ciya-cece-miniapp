@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ciya.cece.assessment.mapper.AssessmentSessionMapper">
+
+    <select id="selectHistoryByStudentId" resultType="com.ciya.cece.assessment.vo.AssessmentHistoryVO">
+        SELECT
+            s.session_no,
+            s.selected_stage_code,
+            r.estimated_stage_code,
+            r.vocab_estimate_mid,
+            r.confidence_score,
+            s.finished_at
+        FROM assessment_session s
+        INNER JOIN assessment_result r ON s.id = r.session_id
+        WHERE s.student_id = #{studentId}
+        ORDER BY s.finished_at DESC, s.id DESC
+    </select>
+</mapper>

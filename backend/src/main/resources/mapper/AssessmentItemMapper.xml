@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ciya.cece.assessment.mapper.AssessmentItemMapper">
+
+    <select id="selectCandidateItems" resultType="com.ciya.cece.assessment.entity.AssessmentItem">
+        SELECT
+            id,
+            item_code,
+            stage_code,
+            question_type,
+            ability_type,
+            word_text,
+            stem_text,
+            stem_audio_url,
+            stem_image_url,
+            difficulty_score,
+            discrimination_score,
+            is_anchor,
+            review_status,
+            bank_version,
+            content_source,
+            status,
+            created_at,
+            updated_at
+        FROM assessment_item
+        WHERE stage_code = #{stageCode}
+          AND bank_version = #{bankVersion}
+          AND is_anchor = #{isAnchor}
+          AND review_status = 'APPROVED'
+          AND status = 1
+          AND difficulty_score BETWEEN #{minDifficulty} AND #{maxDifficulty}
+        <if test="excludedItemIds != null and excludedItemIds.size() > 0">
+          AND id NOT IN
+          <foreach collection="excludedItemIds" item="itemId" open="(" separator="," close=")">
+              #{itemId}
+          </foreach>
+        </if>
+        ORDER BY ABS(difficulty_score - #{targetDifficulty}) ASC,
+                 difficulty_score ASC,
+                 id ASC
+        LIMIT #{limitSize}
+    </select>
+
+    <select id="selectLatestBankVersion" resultType="java.lang.String">
+        SELECT bank_version
+        FROM assessment_item
+        WHERE stage_code = #{stageCode}
+          AND status = 1
+        ORDER BY updated_at DESC, id DESC
+        LIMIT 1
+    </select>
+</mapper>

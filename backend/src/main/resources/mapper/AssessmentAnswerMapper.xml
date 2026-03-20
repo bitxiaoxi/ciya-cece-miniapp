@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ciya.cece.assessment.mapper.AssessmentAnswerMapper">
+
+    <select id="selectAnswerRecordsBySessionId" resultType="com.ciya.cece.assessment.dto.AssessmentAnswerRecordDTO">
+        SELECT
+            aa.id AS answer_id,
+            aa.session_id,
+            aa.item_id,
+            aa.question_no,
+            aa.phase_type,
+            aa.selected_option_id,
+            aa.answer_status,
+            aa.is_correct,
+            aa.response_time_ms,
+            aa.difficulty_before,
+            aa.difficulty_after,
+            aa.created_at,
+            ai.question_type,
+            ai.ability_type,
+            ai.word_text,
+            ai.difficulty_score AS item_difficulty_score,
+            ai.is_anchor AS item_is_anchor
+        FROM assessment_answer aa
+        INNER JOIN assessment_item ai ON aa.item_id = ai.id
+        WHERE aa.session_id = #{sessionId}
+        ORDER BY aa.question_no ASC, aa.id ASC
+    </select>
+</mapper>

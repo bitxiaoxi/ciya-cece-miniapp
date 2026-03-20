@@ -1,0 +1,28 @@
+server:
+  port: ${ASSESSMENT_SERVER_PORT:8080}
+
+spring:
+  application:
+    name: assessment-backend
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${ASSESSMENT_DB_URL:jdbc:mysql://127.0.0.1:3306/ciya_cece_assessment?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true}
+    username: ${ASSESSMENT_DB_USERNAME:root}
+    password: ${ASSESSMENT_DB_PASSWORD:root}
+    hikari:
+      initialization-fail-timeout: -1
+      connection-timeout: 3000
+      maximum-pool-size: 10
+      minimum-idle: 2
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+  sql:
+    init:
+      mode: never
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
