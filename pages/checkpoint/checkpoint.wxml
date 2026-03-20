@@ -3,8 +3,9 @@
   <view class="floating-orb mint checkpoint-orb orb-right"></view>
 
   <view class="checkpoint-head fade-up">
-    <text class="soft-badge">Checkpoint · {{milestone}} 题完成</text>
+    <text class="soft-badge">{{stage.shortLabel}} · {{milestone}} / {{total}} 题完成</text>
     <text class="checkpoint-title">{{themeMode === 'child' ? '歇一口气，再继续' : '小结一下，继续完成测评'}}</text>
+    <text class="checkpoint-subtitle">当前测评仍在进行中，后端会话和作答路径已保留。</text>
   </view>
 
   <encourage-panel mode="{{themeMode}}" panel="{{panel}}" bind:continue="handleContinue"></encourage-panel>

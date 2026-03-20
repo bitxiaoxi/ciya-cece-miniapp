@@ -13,49 +13,86 @@
     </view>
   </view>
 
-  <result-stat-card result="{{result}}" mode="{{themeMode}}"></result-stat-card>
-
-  <brand-result-note
-    variant="result"
-    mode="{{themeMode}}"
-    title="本次结果由青青课堂自适应测评生成"
-    description="结合短回合题目表现、能力维度和难度变化，帮助家长更清楚地理解当前词汇覆盖和下一步巩固方向。"
-  ></brand-result-note>
-
-  <view class="result-tags soft-card fade-up">
-    <text class="section-title">这次表现关键词</text>
-    <view class="tag-list">
-      <block wx:for="{{referenceTags}}" wx:key="*this">
-        <text class="tag-chip">{{item}}</text>
-      </block>
-    </view>
+  <view wx:if="{{loading}}" class="result-loading surface-card fade-up">
+    <text class="loading-title">正在加载测评结果</text>
+    <text class="loading-desc">后端会返回词汇量区间、能力分项和结果依据摘要。</text>
   </view>
 
-  <view class="result-section surface-card fade-up">
-    <text class="section-title">学段参考</text>
-    <text class="section-main">{{result.stageReference}}</text>
-    <text class="section-sub">基础词掌握会影响整体估算值，继续积累高频词会带来更明显的提升。</text>
-  </view>
+  <block wx:elif="{{result}}">
+    <result-stat-card result="{{result}}" mode="{{themeMode}}"></result-stat-card>
 
-  <view class="result-section surface-card fade-up">
-    <text class="section-title">能力拆解</text>
-    <view class="ability-list">
-      <block wx:for="{{result.abilities}}" wx:key="key">
-        <ability-bar ability="{{item}}" mode="{{themeMode}}"></ability-bar>
-      </block>
-    </view>
-  </view>
+    <brand-result-note
+      variant="result"
+      mode="{{themeMode}}"
+      title="本次结果由青青课堂自适应测评生成"
+      description="结合短回合题目表现、能力维度、锚点题表现和难度变化，帮助家长更清楚地理解当前词汇覆盖和下一步巩固方向。"
+    ></brand-result-note>
 
-  <view class="result-section surface-card fade-up">
-    <text class="section-title">下一步建议</text>
-    <view class="suggestion-list">
-      <block wx:for="{{suggestionTags}}" wx:key="*this">
-        <view class="suggestion-item">
-          <text class="suggestion-dot"></text>
-          <text class="suggestion-text">{{item}}</text>
-        </view>
-      </block>
+    <view class="result-tags soft-card fade-up">
+      <text class="section-title">这次表现关键词</text>
+      <view class="tag-list">
+        <block wx:for="{{referenceTags}}" wx:key="*this">
+          <text class="tag-chip">{{item}}</text>
+        </block>
+      </view>
     </view>
+
+    <view class="result-section surface-card fade-up">
+      <text class="section-title">学段参考</text>
+      <text class="section-main">{{stageReference}}</text>
+      <text class="section-sub">测评结果不是单点分数，而是结合规则映射和作答路径得到的区间估计。</text>
+    </view>
+
+    <view class="result-section surface-card fade-up">
+      <text class="section-title">能力拆解</text>
+      <view class="ability-list">
+        <block wx:for="{{abilities}}" wx:key="key">
+          <ability-bar ability="{{item}}" mode="{{themeMode}}"></ability-bar>
+        </block>
+      </view>
+    </view>
+
+    <view class="result-section surface-card fade-up">
+      <text class="section-title">结果依据摘要</text>
+      <view class="basis-grid">
+        <block wx:for="{{basisItems}}" wx:key="label">
+          <view class="basis-item soft-card">
+            <text class="basis-label">{{item.label}}</text>
+            <text class="basis-value">{{item.value}}</text>
+          </view>
+        </block>
+      </view>
+      <text class="section-sub">{{basisSummary}}</text>
+    </view>
+
+    <view class="result-section surface-card fade-up">
+      <text class="section-title">本次测评信息</text>
+      <view class="session-list">
+        <block wx:for="{{sessionItems}}" wx:key="label">
+          <view class="session-item">
+            <text class="session-label">{{item.label}}</text>
+            <text class="session-value">{{item.value}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="result-section surface-card fade-up">
+      <text class="section-title">下一步建议</text>
+      <view class="suggestion-list">
+        <block wx:for="{{suggestionTags}}" wx:key="*this">
+          <view class="suggestion-item">
+            <text class="suggestion-dot"></text>
+            <text class="suggestion-text">{{item}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+
+  <view wx:else class="result-loading surface-card fade-up">
+    <text class="loading-title">结果暂不可用</text>
+    <text class="loading-desc">请确认后端服务已启动，并且该测评会话已经完成。</text>
   </view>
 
   <action-footer

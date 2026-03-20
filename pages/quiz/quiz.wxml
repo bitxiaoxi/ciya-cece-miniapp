@@ -13,43 +13,55 @@
   <view class="quiz-stage-bubble fade-up {{themeMode === 'child' ? 'child' : 'student'}}">
     <view class="bubble-copy">
       <text class="bubble-title">{{themeMode === 'child' ? '轻松做，慢慢选' : '短回合自适应词汇测评'}}</text>
-      <text class="bubble-desc">{{themeMode === 'child' ? '遇到不会的题也没关系，系统会继续往下走。' : '题目会根据你的回答微调难度，结果会给出估算区间和能力拆解。'}}</text>
+      <text class="bubble-desc">{{themeMode === 'child' ? '遇到不会的题也没关系，系统会继续往下走。' : '题目会根据你的回答微调难度，结果会给出估算区间、能力拆解和依据摘要。'}}</text>
     </view>
     <text class="bubble-emoji">{{themeMode === 'child' ? '🌱' : '📘'}}</text>
   </view>
 
-  <question-card question="{{question}}" mode="{{themeMode}}"></question-card>
-
-  <audio-button
-    wx:if="{{question.audio}}"
-    playing="{{isPlayingAudio}}"
-    mode="{{themeMode}}"
-    transcript="{{themeMode === 'child' ? '占位播放，不接真实音频' : 'Mock Audio · 点击模拟播放'}}"
-    bind:play="handlePlayAudio"
-  ></audio-button>
-
-  <view class="quiz-option-list">
-    <block wx:for="{{optionsView}}" wx:key="id">
-      <answer-option
-        option="{{item}}"
-        state="{{item.visualState}}"
-        mode="{{themeMode}}"
-        bind:select="handleSelectOption"
-      ></answer-option>
-    </block>
+  <view wx:if="{{questionLoading}}" class="quiz-loading surface-card fade-up">
+    <text class="loading-title">正在准备下一题</text>
+    <text class="loading-desc">后端正在根据当前难度和作答路径选择最合适的题目。</text>
   </view>
 
-  <view wx:if="{{feedbackText}}" class="quiz-feedback {{feedbackTone}}">
-    <text>{{feedbackText}}</text>
-  </view>
+  <block wx:elif="{{question}}">
+    <question-card question="{{question}}" mode="{{themeMode}}"></question-card>
 
-  <action-footer
-    primary-text="{{primaryText}}"
-    primary-disabled="{{primaryDisabled}}"
-    secondary-actions="{{secondaryActions}}"
-    bind:primarytap="handlePrimaryTap"
-    bind:secondarytap="handleSecondaryTap"
-  ></action-footer>
+    <audio-button
+      wx:if="{{question.audioUrl}}"
+      playing="{{isPlayingAudio}}"
+      mode="{{themeMode}}"
+      transcript="{{question.audioHint}}"
+      bind:play="handlePlayAudio"
+    ></audio-button>
+
+    <view class="quiz-option-list">
+      <block wx:for="{{optionsView}}" wx:key="id">
+        <answer-option
+          option="{{item}}"
+          state="{{item.visualState}}"
+          mode="{{themeMode}}"
+          bind:select="handleSelectOption"
+        ></answer-option>
+      </block>
+    </view>
+
+    <view wx:if="{{feedbackText}}" class="quiz-feedback {{feedbackTone}}">
+      <text>{{feedbackText}}</text>
+    </view>
+
+    <action-footer
+      primary-text="{{primaryText}}"
+      primary-disabled="{{primaryDisabled}}"
+      secondary-actions="{{secondaryActions}}"
+      bind:primarytap="handlePrimaryTap"
+      bind:secondarytap="handleSecondaryTap"
+    ></action-footer>
+  </block>
+
+  <view wx:else class="quiz-loading surface-card fade-up">
+    <text class="loading-title">当前没有可展示的题目</text>
+    <text class="loading-desc">可以返回重新开始测评，或检查后端服务是否正常。</text>
+  </view>
 
   <view class="quiz-brand-slot">
     <brand-signature

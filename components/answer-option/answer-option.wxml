@@ -4,7 +4,11 @@
   </view>
   <view class="option-copy">
     <text class="option-label">{{option.label}}</text>
-    <text wx:if="{{option.helper}}" class="option-helper">{{option.helper}}</text>
+    <image wx:if="{{option.imageUrl}}" class="option-image" src="{{option.imageUrl}}" mode="aspectFill"></image>
+    <view wx:if="{{option.showMeta}}" class="option-meta">
+      <text wx:if="{{option.helper}}" class="option-helper">{{option.helper}}</text>
+      <text wx:if="{{option.audioUrl}}" class="option-chip">音频选项</text>
+    </view>
   </view>
   <view class="option-state-mark">
     <text wx:if="{{state === 'correct'}}">✓</text>

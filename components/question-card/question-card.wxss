@@ -11,6 +11,12 @@
   gap: 14rpx;
 }
 
+.question-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
 .question-tag {
   align-self: flex-start;
   min-height: 48rpx;
@@ -20,6 +26,19 @@
   color: var(--brand-primary-deep);
   font-size: 22rpx;
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+
+.question-phase {
+  align-self: flex-start;
+  min-height: 48rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  background: rgba(30, 142, 132, 0.1);
+  color: var(--text-secondary);
+  font-size: 22rpx;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
 }
@@ -83,9 +102,17 @@
   line-height: 1;
 }
 
+.question-illustration-image {
+  width: 100%;
+  max-width: 420rpx;
+  height: 220rpx;
+  border-radius: 24rpx;
+}
+
 .illustration-label {
   font-size: 24rpx;
   color: var(--text-secondary);
+  text-align: center;
 }
 
 .is-student .question-stem {
@@ -100,4 +127,8 @@
 .is-student .question-illustration {
   min-height: 196rpx;
   border-radius: 24rpx;
+}
+
+.is-student .question-illustration-image {
+  height: 188rpx;
 }

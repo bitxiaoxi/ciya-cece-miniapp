@@ -15,7 +15,70 @@
       <brand-badge variant="normal" text="来自青青课堂的自适应测评" mode="child"></brand-badge>
     </view>
     <text class="segment-title">选择当前学习阶段</text>
-    <text class="segment-subtitle">系统会根据你选择的阶段，切换更合适的题面难度和页面表达方式。</text>
+    <text class="segment-subtitle">先选择学生档案，再选择学习阶段。后端会按真实规则创建测评会话并返回自适应题目。</text>
+  </view>
+
+  <view class="student-panel surface-card fade-up">
+    <view class="panel-head">
+      <view class="panel-copy">
+        <text class="panel-title">学生档案</text>
+        <text class="panel-subtitle">开始测评前需要先确定学生身份，历史记录也会按学生维度归档。</text>
+      </view>
+      <view class="panel-actions">
+        <view class="ghost-cta compact-cta" bindtap="handleCreateStudent">新建档案</view>
+        <view wx:if="{{selectedStudent}}" class="ghost-cta compact-cta" bindtap="handleEditStudent">编辑已选</view>
+      </view>
+    </view>
+
+      <view wx:if="{{students.length}}" class="student-list">
+      <block wx:for="{{students}}" wx:key="id">
+        <view class="student-card {{item.id === selectedStudentId ? 'is-selected' : ''}}" data-student-id="{{item.id}}" bindtap="handleSelectStudent">
+          <view class="student-main">
+            <text class="student-name">{{item.studentName}}</text>
+            <text class="student-meta">{{item.studentMeta}}</text>
+          </view>
+          <view class="student-check">{{item.id === selectedStudentId ? '✓' : ''}}</view>
+        </view>
+      </block>
+    </view>
+
+    <view wx:else class="empty-block">
+      <text class="empty-text">还没有学生档案，先创建一个再开始测评。</text>
+    </view>
+
+    <view wx:if="{{studentFormVisible}}" class="student-form soft-card fade-up">
+      <text class="form-title">{{studentFormTitle}}</text>
+
+      <view class="form-field">
+        <text class="field-label">学生姓名</text>
+        <input class="field-input" value="{{studentForm.studentName}}" placeholder="例如：林小芽" bindinput="handleStudentNameInput" />
+      </view>
+
+      <view class="form-field">
+        <text class="field-label">当前年级</text>
+        <picker mode="selector" range="{{gradeOptions}}" range-key="label" value="{{gradeIndex}}" bindchange="handleGradeChange">
+          <view class="picker-display">{{currentGradeLabel}}</view>
+        </picker>
+      </view>
+
+      <view class="form-field">
+        <text class="field-label">出生年份</text>
+        <input class="field-input" type="number" value="{{studentForm.birthYear}}" placeholder="选填，例如 2018" bindinput="handleBirthYearInput" />
+      </view>
+
+      <view class="form-actions">
+        <view class="secondary-cta compact-save" bindtap="handleCancelStudentForm">取消</view>
+        <view class="primary-cta compact-save {{savingStudent ? 'is-disabled' : ''}}" bindtap="handleSaveStudent">保存档案</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="segment-ai surface-card fade-up">
+    <view class="ai-copy">
+      <text class="panel-title">AI 结果解读</text>
+      <text class="panel-subtitle">AI 只参与解释文案，不参与词汇量数值判定。开启后会写入后端 AI 留痕。</text>
+    </view>
+    <switch color="#2f9e6f" checked="{{aiEnabled}}" bindchange="handleAiSwitchChange" />
   </view>
 
   <view class="segment-list">
@@ -24,11 +87,42 @@
     </block>
   </view>
 
+  <view wx:if="{{selectedStudent}}" class="history-panel surface-card fade-up">
+    <view class="panel-copy">
+      <text class="panel-title">最近测评记录</text>
+      <text class="panel-subtitle">点击任一记录可直接查看当次结果。</text>
+    </view>
+
+    <view wx:if="{{historyLoading}}" class="empty-block">
+      <text class="empty-text">历史记录加载中...</text>
+    </view>
+
+    <view wx:elif="{{historyRecords.length}}" class="history-list">
+      <block wx:for="{{historyRecords}}" wx:key="sessionNo">
+        <view class="history-item" data-session-no="{{item.sessionNo}}" data-stage-code="{{item.selectedStageCode}}" bindtap="handleOpenHistoryResult">
+          <view class="history-main">
+            <text class="history-title">{{item.selectedStageLabel}} → {{item.estimatedStageLabel}}</text>
+            <text class="history-meta">{{item.finishedAtText}}</text>
+          </view>
+          <view class="history-side">
+            <text class="history-score">{{item.vocabEstimateMid}}</text>
+            <text class="history-confidence">可信度 {{item.confidenceScoreText}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view wx:else class="empty-block">
+      <text class="empty-text">当前学生还没有历史测评，完成一次测评后会显示在这里。</text>
+    </view>
+  </view>
+
   <view class="segment-footer surface-card fade-up">
     <view class="footer-copy">
       <text class="footer-tip">小朋友做题时可以由家长陪同，一起更轻松。</text>
-      <text wx:if="{{selectedStage}}" class="footer-preview">已选：{{selectedStage.shortLabel}} · {{selectedStage.promptStyle}}</text>
+      <text wx:if="{{selectedStudent}}" class="footer-preview">学生：{{selectedStudent.studentName}} · {{selectedStudent.gradeLabel}}</text>
+      <text wx:if="{{selectedStage}}" class="footer-preview">学段：{{selectedStage.shortLabel}} · {{selectedStage.promptStyle}} · {{selectedStage.totalQuestionCount}}题/次</text>
     </view>
-    <view class="primary-cta {{selectedId ? '' : 'is-disabled'}}" bindtap="handleContinue">继续进入测评</view>
+    <view class="primary-cta {{selectedId && selectedStudentId ? '' : 'is-disabled'}}" bindtap="handleContinue">继续进入测评</view>
   </view>
 </view>

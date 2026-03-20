@@ -1,12 +1,18 @@
 <view class="question-card surface-card {{mode === 'child' ? 'is-child' : 'is-student'}} fade-up">
   <view class="question-top">
-    <text class="question-tag">{{question.typeLabel}}</text>
+    <view class="question-badges">
+      <text class="question-tag">{{question.typeLabel}}</text>
+      <text wx:if="{{question.phaseLabel}}" class="question-phase">{{question.phaseLabel}}</text>
+    </view>
     <text class="question-prompt">{{question.prompt}}</text>
   </view>
-  <view wx:if="{{question.image}}" class="question-illustration tone-{{question.image.tone}}">
-    <text class="illustration-emoji">{{question.image.emoji}}</text>
-    <text class="illustration-label">{{question.image.label}}</text>
+
+  <view wx:if="{{question.showIllustration}}" class="question-illustration tone-{{question.mediaTone}}">
+    <image wx:if="{{question.imageUrl}}" class="question-illustration-image" src="{{question.imageUrl}}" mode="aspectFit"></image>
+    <text wx:else class="illustration-emoji">{{question.imageEmoji}}</text>
+    <text class="illustration-label">{{question.imageHint}}</text>
   </view>
+
   <view class="question-body">
     <text class="question-stem">{{question.stem}}</text>
     <text wx:if="{{question.stemNote}}" class="question-note">{{question.stemNote}}</text>

@@ -32,3 +32,9 @@
   color: var(--text-primary);
   font-weight: 800;
 }
+
+.checkpoint-subtitle {
+  font-size: 26rpx;
+  line-height: 1.68;
+  color: var(--text-secondary);
+}
